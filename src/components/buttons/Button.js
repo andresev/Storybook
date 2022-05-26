@@ -1,8 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-const BlueButton = ({ onPress, text, color }) => {
-  const bgColor = 'red';
+const Button = ({ onPress, text, color }) => {
   return (
     <View>
       <TouchableOpacity
@@ -16,13 +15,15 @@ const BlueButton = ({ onPress, text, color }) => {
           },
         ]}
       >
-        <Text>{text ? text : 'Click me!'}</Text>
+        <Text style={[styles.buttonText, { color: color ? 'white' : color }]}>
+          {text ? text : 'Click me!'}
+        </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default BlueButton;
+export default Button;
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -30,5 +31,8 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderWidth: 2,
     borderRadius: 50,
+  },
+  buttonText: {
+    fontSize: 20,
   },
 });
