@@ -6,6 +6,7 @@
 //     'storybook/addon-actions',
 //     'storybook/addon-links',
 //     'storybook/addon-knobs',
+//     '@storybook/addon-controls',
 //   ],
 //   babel: async (options) => ({
 //     // Update your babel configuration here

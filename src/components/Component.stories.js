@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import CenterView from '../../storybook/stories/CenterView';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { button, object, text } from '@storybook/addon-knobs';
 
 import TestComponent from './buttons/TestComponent';
 import Button from './buttons/Button';
@@ -15,10 +15,11 @@ storiesOf('Test Component', module)
 storiesOf('Buttons', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Blue Button', () => (
-    <Button onPress={action('onPress')} text={text('Hello')} color="blue" />
-  ))
-  .add('Red Button', () => (
-    <Button onPress={action('onPress')} text={text('Hello')} color="red" />
+    <Button
+      onPress={action('Button Pressed')}
+      text={text('Button text')}
+      color={text('Color')}
+    />
   ));
 
 storiesOf('Sliders', module)
@@ -26,7 +27,7 @@ storiesOf('Sliders', module)
   .add('Main Slider', () => (
     <MainSlider
       lastNextButton={action('Last button pressed!')}
-      lastNextButtonText={text('Submit')}
+      lastNextButtonText={text('Last button text')}
       progressWidth={10}
     />
   ));
