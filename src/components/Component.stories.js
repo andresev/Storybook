@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
 import TestComponent from './buttons/TestComponent';
-import BlueButton from './buttons/BlueButton';
+import Button from './buttons/Button';
 import MainSlider from './Slider/MainSlider';
 
 storiesOf('Test Component', module)
@@ -15,7 +15,10 @@ storiesOf('Test Component', module)
 storiesOf('Buttons', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Blue Button', () => (
-    <BlueButton onPress={action('onPress')} text={text('Hello')} color />
+    <Button onPress={action('onPress')} text={text('Hello')} color="blue" />
+  ))
+  .add('Red Button', () => (
+    <Button onPress={action('onPress')} text={text('Hello')} color="red" />
   ));
 
 storiesOf('Sliders', module)
